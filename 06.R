@@ -309,7 +309,27 @@ str( df.csv)
 dim ( df.csv)
 
 # 3.
+# 어느 도시 어느 시/군/구에서 월별 발생사건이 많이 일어났는지
+# 발생건 수 중에서 부상신고 중에 사망자 or 부상자 or 중상 or 경상이 몇인지?
 
+myds1 <- df.csv[ , c( "시도", "시군구", "월") ]
+myds1 
 
+myds1 <- df.csv [ , 1:3]
+myds1
+
+myds2 <- df.csv[ , c( "발생건수", "사망자수", "부상자수",
+                      "중상", "경상", "부상신고")]
+myds2
+
+---------
+# 데이터셋 내용 확인    
+class( myds1)
+str( myds1)
+
+class( myds2)
+str( myds2)
+# 
+boxplot( myds1, main = "월별도시", col = 'red')
 
 
